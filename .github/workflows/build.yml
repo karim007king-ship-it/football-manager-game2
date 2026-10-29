@@ -20,7 +20,7 @@ jobs:
       - name: Clean Buildozer cache
         run: |
           export PATH=$PATH:~/.local/bin
-          buildozer clean
+          rm -rf .buildozer bin
 
       - name: Build with Buildozer
         run: |
