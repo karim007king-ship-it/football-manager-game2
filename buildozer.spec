@@ -13,3 +13,5 @@ android.api = 33
 android.minapi = 24
 android.archs = arm64-v8a
 android.ndk = 25b 
+# أضف هذه الخيارات في ملف buildozer.spec لتجاوز أخطاء الترجمة الصارمة
+android.extra_cflags = -Wno-error=xor-used-as-pow -Wno-error=unused-command-line-argument
