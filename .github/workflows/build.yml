@@ -17,6 +17,11 @@ jobs:
           sudo apt-get install -y git zip unzip openjdk-17-jdk python3-pip autoconf libtool pkg-config zlib1g-dev libncurses5-dev libncursesw5-dev libtinfo6 cmake libffi-dev libssl-dev
           pip3 install --upgrade buildozer cython==0.29.36 virtualenv
           
+      - name: Clean Buildozer cache
+        run: |
+          export PATH=$PATH:~/.local/bin
+          buildozer clean
+
       - name: Build with Buildozer
         run: |
           export PATH=$PATH:~/.local/bin
@@ -26,4 +31,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: package
-          path: bin/*.apk 
+          path: bin/*.apk
